@@ -1,0 +1,115 @@
+﻿<Window x:Class="MuseumSystemDesktopApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MuseumSystemDesktopApp"
+        mc:Ignorable="d"
+        ResizeMode="CanMinimize"
+        Title="Museum System OKL" Height="700" Width="1000">
+    <Grid>
+        <Grid x:Name="main_grid" HorizontalAlignment="Left" Height="671" VerticalAlignment="Top" Width="994">
+            <TextBlock x:Name="top_title_museum" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Museum System OKL" VerticalAlignment="Top" Height="48" Width="418" FontSize="30" FontWeight="Bold" TextAlignment="Center" Margin="0,22,0,0"/>
+            <Button x:Name="btn_rezervace" Content="Rezervace" HorizontalAlignment="Left" Margin="35,246,0,0" VerticalAlignment="Top" Width="133" Click="Btn_rezervace_Click"/>
+            <Button x:Name="btn_evidence_navstev" Content="Zaevidovat návštěvu" HorizontalAlignment="Left" Margin="35,198,0,0" VerticalAlignment="Top" Width="133" Click="Btn_evidence_navstev_Click"/>
+            <TextBlock x:Name="text_pozice" HorizontalAlignment="Left" Margin="883,81,0,0" TextWrapping="Wrap" Text="Recepce" VerticalAlignment="Top" Height="30" Width="91" FontSize="20"/>
+            <TextBlock x:Name="jmeno_prihl_zamestnance" HorizontalAlignment="Left" Margin="891,118,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="22" Width="83" FontSize="16" Text="jméno"/>
+            <TextBlock x:Name="prijmeni_prihl_zamestnance" HorizontalAlignment="Left" Margin="891,142,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="22" Width="83" FontSize="16" Text="příjmení"/>
+            <Grid HorizontalAlignment="Left" Height="2" Margin="866,111,0,0" VerticalAlignment="Top" Width="108" Background="Black"/>
+            <Button x:Name="btn_odhlasit_se" Content="Odhlásit se" HorizontalAlignment="Left" Margin="35,596,0,0" VerticalAlignment="Top" Width="133" Click="Btn_odhlasit_se_Click"/>
+        </Grid>
+        <Grid x:Name="evidence_navstev_grid" HorizontalAlignment="Left" Height="510" VerticalAlignment="Top" Width="632" Margin="220,130,0,0" Visibility="Hidden">
+            <Border x:Name="ev_border" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="444" VerticalAlignment="Top" Width="612" Margin="10,56,0,0"/>
+            <TextBlock x:Name="text_nadpis_evidence_navstev" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Evidence návštěv" VerticalAlignment="Top" Height="41" Width="612" FontSize="24" TextAlignment="Center" FontWeight="Bold"/>
+            <TextBlock x:Name="text_pocet" TextWrapping="Wrap" Text="počet" Margin="61,75,502,407" FontSize="18"/>
+            <TextBlock x:Name="text_ma_rezervaci" TextWrapping="Wrap" Text="má rezervaci" Margin="61,108,463,374" FontSize="18"/>
+            <CheckBox x:Name="checkBox_ma_rezervaci" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="174,115,0,0" Click="CheckBox_ma_rezervaci_Click"/>
+            <TextBox x:Name="textBox_pocet" HorizontalAlignment="Left" Height="21" TextWrapping="Wrap" VerticalAlignment="Top" Width="51" Margin="174,75,0,0"/>
+            <Button x:Name="btn_zaevidovat" Content="Zaevidovat" HorizontalAlignment="Left" Margin="249,454,0,0" VerticalAlignment="Top" Width="132" Click="Btn_zaevidovat_Click"/>
+            <TextBlock x:Name="textBlock_info_o_zaevidovani" HorizontalAlignment="Left" TextWrapping="Wrap" Text="info o zaevidovani" VerticalAlignment="Top" Margin="174,479,0,0" Width="300" TextAlignment="Center" Height="21" RenderTransformOrigin="0.5,0.5" Foreground="#FFCF1111" FontWeight="Bold"/>
+            <Grid x:Name="vypis_rezervaci_grid" HorizontalAlignment="Left" Height="308" VerticalAlignment="Top" Width="622" Margin="0,141,0,0" Visibility="Hidden">
+                <Border x:Name="vr_border" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="288" VerticalAlignment="Bottom" Width="567" Margin="33,0,0,10"/>
+                <TextBlock x:Name="title_text_vypis_rezervaci" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Výpis rezervací" VerticalAlignment="Top" Margin="33,18,0,0" FontWeight="Bold" Height="34" Width="567" FontSize="20" TextAlignment="Center"/>
+                <Label x:Name="label_od_info_text" Content="rok / měsíc / den / hodina" Margin="80,34,387,251"/>
+                <Label x:Name="label_od" Content="od" Margin="47,57,547,228" FontWeight="Bold"/>
+                <TextBox x:Name="textBox_od_rok" HorizontalAlignment="Left" Height="19" TextWrapping="Wrap" VerticalAlignment="Top" Width="65" Margin="80,61,0,0" TextChanged="TextBox_od_rok_TextChanged"/>
+                <TextBox x:Name="textBox_od_mesic" HorizontalAlignment="Left" Height="19" TextWrapping="Wrap" VerticalAlignment="Top" Width="26" Margin="150,61,0,0" IsEnabled="False" TextChanged="TextBox_od_mesic_TextChanged"/>
+                <TextBox x:Name="textBox_od_den" HorizontalAlignment="Left" Height="19" TextWrapping="Wrap" VerticalAlignment="Top" Width="26" Margin="181,61,0,0" IsEnabled="False" TextChanged="TextBox_od_den_TextChanged"/>
+                <TextBox x:Name="textBox_od_hodina" HorizontalAlignment="Left" Height="19" TextWrapping="Wrap" VerticalAlignment="Top" Width="26" Margin="212,61,0,0" IsEnabled="False" TextChanged="TextBox_od_hodina_TextChanged"/>
+                <Button x:Name="btn_vyhledat_rezervaci" Content="Vyhledat" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="272,60,0,0" IsEnabled="False" Click="Btn_vyhledat_rezervaci_Click"/>
+                <Label x:Name="label_od_info_text_Copy" Content="rok / měsíc / den / hodina" Margin="412,34,55,251"/>
+                <Label x:Name="label_do" Content="do" Margin="379,57,215,228" RenderTransformOrigin="0.476,1.986" FontWeight="Bold"/>
+                <TextBox x:Name="textBox_do_rok" HorizontalAlignment="Left" Height="19" TextWrapping="Wrap" VerticalAlignment="Top" Width="65" Margin="412,61,0,0" TextChanged="TextBox_do_rok_TextChanged"/>
+                <TextBox x:Name="textBox_do_mesic" HorizontalAlignment="Left" Height="19" TextWrapping="Wrap" VerticalAlignment="Top" Width="26" Margin="482,61,0,0" IsEnabled="False" TextChanged="TextBox_do_mesic_TextChanged"/>
+                <TextBox x:Name="textBox_do_den" HorizontalAlignment="Left" Height="19" TextWrapping="Wrap" VerticalAlignment="Top" Width="26" Margin="513,61,0,0" IsEnabled="False" TextChanged="TextBox_do_den_TextChanged"/>
+                <TextBox x:Name="textBox_do_hodina" HorizontalAlignment="Left" Height="19" TextWrapping="Wrap" VerticalAlignment="Top" Width="26" Margin="544,61,0,0" IsEnabled="False" TextChanged="TextBox_do_hodina_TextChanged"/>
+                <DataGrid x:Name="dataGrid_rezervace" Margin="47,96,37,20" IsReadOnly="true" SelectionMode="Single"/>
+            </Grid>
+        </Grid>
+        <Grid x:Name="rezervace_grid" HorizontalAlignment="Left" Height="510" VerticalAlignment="Top" Width="632" Margin="220,130,0,0" Visibility="Hidden">
+            <Border x:Name="ev_border1" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="444" VerticalAlignment="Top" Width="612" Margin="10,56,0,0"/>
+            <TextBlock x:Name="text_nadpis_rezervace" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Rezervace" VerticalAlignment="Top" Height="41" Width="612" FontSize="24" TextAlignment="Center" FontWeight="Bold"/>
+            <Button x:Name="btn_vytvorit_rezervaci" Content="Vytvořit" HorizontalAlignment="Left" Margin="40,70,0,0" VerticalAlignment="Top" Width="132" Click="Btn_vytvorit_rezervaci_Click"/>
+            <Button x:Name="btn_upravit_rezervaci" Content="Upravit" HorizontalAlignment="Left" Margin="177,70,0,0" VerticalAlignment="Top" Width="132" Click="Btn_upravit_rezervaci_Click" IsEnabled="False"/>
+            <Button x:Name="btn_zrusit_rezervaci" Content="Zrušit" HorizontalAlignment="Left" Margin="314,70,0,0" VerticalAlignment="Top" Width="132" IsEnabled="False" Click="Btn_zrusit_rezervaci_Click"/>
+            <Button x:Name="btn_vypis_vsech_rezervaci" Content="Výpis všech rezervací" HorizontalAlignment="Left" Margin="451,70,0,0" VerticalAlignment="Top" Width="132" Click="Btn_vypis_vsech_rezervaci_Click"/>
+            <Grid x:Name="vytvorit_rezervaci_grid" HorizontalAlignment="Left" Height="344" VerticalAlignment="Top" Width="622" Margin="0,141,0,0" Visibility="Hidden">
+                <Border x:Name="vr_border1" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="322" VerticalAlignment="Bottom" Width="567" Margin="33,0,0,10"/>
+                <TextBlock x:Name="title_text_vytvorit_rezervaci" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Vytvořit rezervaci" VerticalAlignment="Top" Margin="33,-22,0,0" FontWeight="Bold" Height="34" Width="567" FontSize="20" TextAlignment="Center"/>
+                <TextBlock x:Name="textBlock_info_create" TextWrapping="Wrap" Text="Rezervace vytvořena" Margin="341,304,38,20" FontWeight="Bold" Foreground="#FFCF1111"/>
+                <Label x:Name="label_jmeno_info" Content="Jméno" Margin="140,29,416,292"/>
+                <TextBox x:Name="textBox_jmeno" HorizontalAlignment="Left" Height="19" TextWrapping="Wrap" VerticalAlignment="Top" Width="65" Margin="211,33,0,0"/>
+                <Label x:Name="label_prijmeni_info" Content="Příjmení" Margin="140,57,416,264"/>
+                <TextBox x:Name="textBox_prijmeni" HorizontalAlignment="Left" Height="19" TextWrapping="Wrap" VerticalAlignment="Top" Width="65" Margin="211,61,0,0"/>
+                <Button x:Name="btn_create_reservation" Content="Vytvořit" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="252,304,0,0" Click="Btn_create_reservation_Click"/>
+                <Label x:Name="label_pocet_osob_info" Content="Počet osob" Margin="134,85,416,236"/>
+                <TextBox x:Name="textBox_pocet_osob" HorizontalAlignment="Left" Height="19" TextWrapping="Wrap" VerticalAlignment="Top" Width="42" Margin="211,85,0,0"/>
+                <Label x:Name="label_pruvodce_info" Content="Průvodce" Margin="134,265,426,55"/>
+                <CheckBox x:Name="checkBox_pruvodce" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="211,270,0,0"/>
+                <TextBlock x:Name="textBlock_rok_rezervace_info" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Rok:" VerticalAlignment="Top" Margin="163,126,0,0" Width="26" Height="21"/>
+                <TextBlock x:Name="textBlock_mesic_rezervace_info" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Mesíc:" VerticalAlignment="Top" Margin="153,153,0,0" Width="36" Height="21"/>
+                <TextBlock x:Name="textBlock_den_rezervace_info" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Den:" VerticalAlignment="Top" Margin="162,181,0,0" Width="27" Height="21"/>
+                <TextBlock x:Name="textBlock_hodina_rezervace_info" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Hodina:" VerticalAlignment="Top" Margin="145,215,0,0" Width="44" Height="21"/>
+                <ComboBox x:Name="comboBox_year_new_reservation" HorizontalAlignment="Left" Margin="211,126,0,0" VerticalAlignment="Top" Width="76" Height="21"/>
+                <ComboBox x:Name="comboBox_month_new_reservation" HorizontalAlignment="Left" Margin="211,153,0,0" VerticalAlignment="Top" Width="76" Height="21"/>
+                <ComboBox x:Name="comboBox_day_new_reservation" HorizontalAlignment="Left" Margin="211,181,0,0" VerticalAlignment="Top" Width="76" Height="21"/>
+                <Slider x:Name="slider_hour_new_reservation" HorizontalAlignment="Left" Margin="211,214,0,0" VerticalAlignment="Top" Width="224" Maximum="18" Minimum="8" Value="8" IsSnapToTickEnabled="True" ValueChanged="Slider_hour_new_reservation_ValueChanged"/>
+                <Slider x:Name="slider_minute_new_reservation" HorizontalAlignment="Left" Margin="211,239,0,0" VerticalAlignment="Top" Width="224" TickFrequency="5" Maximum="55" IsSnapToTickEnabled="True" ValueChanged="Slider_minute_new_reservation_ValueChanged"/>
+                <TextBlock x:Name="textBlock_minuta_rezervace_info" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Minuta:" VerticalAlignment="Top" Margin="146,241,0,0" Width="43" Height="19"/>
+                <TextBlock x:Name="textBlock_set_hour_2" HorizontalAlignment="Left" TextWrapping="Wrap" Text="10" VerticalAlignment="Top" Margin="439,212,0,0" Width="44" Height="21"/>
+                <TextBlock x:Name="textBlock_set_minute_2" HorizontalAlignment="Left" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Margin="440,236,0,0" Width="43" Height="21"/>
+            </Grid>
+            <Grid x:Name="vypis_rezervaci_grid2" HorizontalAlignment="Left" Height="308" VerticalAlignment="Top" Width="622" Margin="0,141,0,0" Visibility="Hidden">
+                <Border x:Name="vr_border2" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="288" VerticalAlignment="Bottom" Width="567" Margin="33,0,0,10"/>
+                <TextBlock x:Name="title_text_vypis_rezervaci2" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Výpis všech rezervací" VerticalAlignment="Top" Margin="47,18,0,0" FontWeight="Bold" Height="34" Width="553" FontSize="20" TextAlignment="Center"/>
+                <TextBlock x:Name="textBlock_pocet_rezervaci_info" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Počet rezervací:" VerticalAlignment="Top" Margin="234,272,0,0" Width="83" Height="21"/>
+                <TextBlock x:Name="textBlock_pocet_rezervaci" HorizontalAlignment="Left" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Margin="322,272,0,0" Width="63" Height="21"/>
+                <TextBlock x:Name="textBlock_info_o_zruseni_rezervace" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Rezervace zrušena" VerticalAlignment="Top" Margin="405,272,0,0" Width="179" Height="21" FontWeight="Bold" Foreground="#FFCF1111"/>
+                <DataGrid x:Name="dataGrid_vypis_rezervaci2" Margin="47,57,38,41" IsReadOnly="true" SelectionMode="Single"/>
+            </Grid>
+            <Grid x:Name="upravit_rezervaci_grid" HorizontalAlignment="Left" Height="344" VerticalAlignment="Top" Width="622" Margin="0,141,0,0" Visibility="Hidden">
+                <Border x:Name="vr_border3" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="298" VerticalAlignment="Bottom" Width="567" Margin="33,0,0,0"/>
+                <TextBlock x:Name="title_text_upravit_rezervaci" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Upravit rezervaci" VerticalAlignment="Top" Margin="47,10,0,0" FontWeight="Bold" Height="36" Width="553" FontSize="20" TextAlignment="Center"/>
+                <TextBlock x:Name="textBlock_puvodni_rezervace_info" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Původní datum rezervace:" VerticalAlignment="Top" Margin="64,85,0,0" Width="142" Height="21"/>
+                <TextBlock x:Name="textBlock_puvodni_datum_rezervace" HorizontalAlignment="Left" TextWrapping="Wrap" Text="2020" VerticalAlignment="Top" Margin="211,85,0,0" Width="151" Height="21"/>
+                <TextBlock x:Name="textBlock_info_o_editaci_rezervace" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Rezervace upravena" VerticalAlignment="Top" Margin="64,277,0,0" Width="511" Height="21" FontWeight="Bold" Foreground="#FFCF1111" TextAlignment="Center"/>
+                <TextBlock x:Name="textBlock_nove_datum_rezervace_info" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Nové datum rezervace:" VerticalAlignment="Top" Margin="64,111,0,0" Width="125" Height="21"/>
+                <TextBlock x:Name="textBlock_novy_rok_info" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Rok:" VerticalAlignment="Top" Margin="163,138,0,0" Width="26" Height="21"/>
+                <TextBlock x:Name="textBlock_novy_mesic_info" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Mesíc:" VerticalAlignment="Top" Margin="153,165,0,0" Width="36" Height="21"/>
+                <TextBlock x:Name="textBlock_novy_den_info" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Den:" VerticalAlignment="Top" Margin="162,193,0,0" Width="27" Height="21"/>
+                <TextBlock x:Name="textBlock_novy_hodina_info" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Hodina:" VerticalAlignment="Top" Margin="145,227,0,0" Width="44" Height="21"/>
+                <ComboBox x:Name="comboBox_year" HorizontalAlignment="Left" Margin="211,138,0,0" VerticalAlignment="Top" Width="76" Height="21"/>
+                <ComboBox x:Name="comboBox_month" HorizontalAlignment="Left" Margin="211,165,0,0" VerticalAlignment="Top" Width="76" Height="21"/>
+                <ComboBox x:Name="comboBox_day" HorizontalAlignment="Left" Margin="211,193,0,0" VerticalAlignment="Top" Width="76" Height="21"/>
+                <Slider x:Name="slider_hour" HorizontalAlignment="Left" Margin="211,226,0,0" VerticalAlignment="Top" Width="224" Maximum="18" Minimum="8" Value="8" IsSnapToTickEnabled="True" ValueChanged="Slider_hour_ValueChanged"/>
+                <Slider x:Name="slider_minute" HorizontalAlignment="Left" Margin="211,251,0,0" VerticalAlignment="Top" Width="224" TickFrequency="5" Maximum="55" IsSnapToTickEnabled="True" ValueChanged="Slider_minute_ValueChanged"/>
+                <TextBlock x:Name="textBlock_novy_minuta_info" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Minuta:" VerticalAlignment="Top" Margin="146,251,0,0" Width="43" Height="21"/>
+                <TextBlock x:Name="textBlock_set_hour" HorizontalAlignment="Left" TextWrapping="Wrap" Text="10" VerticalAlignment="Top" Margin="439,224,0,0" Width="44" Height="21"/>
+                <TextBlock x:Name="textBlock_set_minute" HorizontalAlignment="Left" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Margin="440,248,0,0" Width="43" Height="21"/>
+                <Button x:Name="button_potvrdit_zmenu_rezervace" Content="Vytvořit změnu" HorizontalAlignment="Left" VerticalAlignment="Top" Width="101" Margin="270,303,0,0" Click="Button_potvrdit_zmenu_rezervace_Click"/>
+                <TextBlock x:Name="textBlock_id_rezervace_info" HorizontalAlignment="Left" TextWrapping="Wrap" Text="ID:" VerticalAlignment="Top" Margin="376,85,0,0" Width="20" Height="21"/>
+                <TextBlock x:Name="textBlock_id_rezervace_cislo" HorizontalAlignment="Left" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Margin="401,85,0,0" Width="20" Height="21"/>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

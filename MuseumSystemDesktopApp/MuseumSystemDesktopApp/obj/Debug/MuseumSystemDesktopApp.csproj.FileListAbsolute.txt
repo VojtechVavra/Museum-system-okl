@@ -1,0 +1,15 @@
+C:\Users\Vooja\Documents\Skola\VSB\4_semestr\DAIS\projekt\desktop_application\MuseumSystemDesktopApp\MuseumSystemDesktopApp\obj\Debug\MuseumSystemDesktopApp.csprojAssemblyReference.cache
+C:\Users\Vooja\Documents\Skola\VSB\4_semestr\DAIS\projekt\desktop_application\MuseumSystemDesktopApp\MuseumSystemDesktopApp\obj\Debug\MainWindow.g.cs
+C:\Users\Vooja\Documents\Skola\VSB\4_semestr\DAIS\projekt\desktop_application\MuseumSystemDesktopApp\MuseumSystemDesktopApp\obj\Debug\App.g.cs
+C:\Users\Vooja\Documents\Skola\VSB\4_semestr\DAIS\projekt\desktop_application\MuseumSystemDesktopApp\MuseumSystemDesktopApp\obj\Debug\MuseumSystemDesktopApp_MarkupCompile.cache
+C:\Users\Vooja\Documents\Skola\VSB\4_semestr\DAIS\projekt\desktop_application\MuseumSystemDesktopApp\MuseumSystemDesktopApp\obj\Debug\MuseumSystemDesktopApp_MarkupCompile.lref
+C:\Users\Vooja\Documents\Skola\VSB\4_semestr\DAIS\projekt\desktop_application\MuseumSystemDesktopApp\MuseumSystemDesktopApp\bin\Debug\MuseumSystemDesktopApp.exe.config
+C:\Users\Vooja\Documents\Skola\VSB\4_semestr\DAIS\projekt\desktop_application\MuseumSystemDesktopApp\MuseumSystemDesktopApp\bin\Debug\MuseumSystemDesktopApp.exe
+C:\Users\Vooja\Documents\Skola\VSB\4_semestr\DAIS\projekt\desktop_application\MuseumSystemDesktopApp\MuseumSystemDesktopApp\bin\Debug\MuseumSystemDesktopApp.pdb
+C:\Users\Vooja\Documents\Skola\VSB\4_semestr\DAIS\projekt\desktop_application\MuseumSystemDesktopApp\MuseumSystemDesktopApp\obj\Debug\MainWindow.baml
+C:\Users\Vooja\Documents\Skola\VSB\4_semestr\DAIS\projekt\desktop_application\MuseumSystemDesktopApp\MuseumSystemDesktopApp\obj\Debug\MuseumSystemDesktopApp.g.resources
+C:\Users\Vooja\Documents\Skola\VSB\4_semestr\DAIS\projekt\desktop_application\MuseumSystemDesktopApp\MuseumSystemDesktopApp\obj\Debug\MuseumSystemDesktopApp.Properties.Resources.resources
+C:\Users\Vooja\Documents\Skola\VSB\4_semestr\DAIS\projekt\desktop_application\MuseumSystemDesktopApp\MuseumSystemDesktopApp\obj\Debug\MuseumSystemDesktopApp.csproj.GenerateResource.cache
+C:\Users\Vooja\Documents\Skola\VSB\4_semestr\DAIS\projekt\desktop_application\MuseumSystemDesktopApp\MuseumSystemDesktopApp\obj\Debug\MuseumSystemDesktopApp.csproj.CoreCompileInputs.cache
+C:\Users\Vooja\Documents\Skola\VSB\4_semestr\DAIS\projekt\desktop_application\MuseumSystemDesktopApp\MuseumSystemDesktopApp\obj\Debug\MuseumSystemDesktopApp.exe
+C:\Users\Vooja\Documents\Skola\VSB\4_semestr\DAIS\projekt\desktop_application\MuseumSystemDesktopApp\MuseumSystemDesktopApp\obj\Debug\MuseumSystemDesktopApp.pdb
